@@ -20,6 +20,8 @@ struct ContentView: View {
                     index in
                     ZStack{
                         Color.blue
+                        Color.white
+                            .opacity(moves[index] == "" ? 1 : 0)
                         Text(moves[index])
                             .font(.system(size:90)).fontWeight(.heavy)
                     }
@@ -31,9 +33,14 @@ struct ContentView: View {
                                 if moves[index] == "" {
                                     moves[index] = xTurn ? "X" : "O"
                                     xTurn.toggle()
+                                        
                                 }
                             }
                         }
+                        .rotation3DEffect(
+                            .init(degrees: moves[index] != "" ? 180 : 0),
+                            axis: (x : 0.0 , y : 1.0, z : 0.0)
+                        )
                 }
             }
         }
