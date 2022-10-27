@@ -11,6 +11,19 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Tic Tac Toe")
+            
+            LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: 15), count: 3), spacing: 15)
+            {
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+            }
         }
         .preferredColorScheme(.dark)
     }
